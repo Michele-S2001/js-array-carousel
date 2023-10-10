@@ -21,10 +21,32 @@ for (let i = 0; i < images.length; i++) {
   let currentImage = images[i];
   //creiamo l'elemento img
   imgDomElement = document.createElement("img");
+  imgDomElement.classList.add('image');
   //aggiungo url
   imgDomElement.src = `${currentImage}`;
   //aggiungo l'elemento img all'interno del carousel
   carouselDomElement.append(imgDomElement);
 }
+
+//creo un indice per selezionare le immagini 
+let imgIndex = 0;
+
+const carouselImages = carouselDomElement.querySelectorAll('.image');
+
+let selectedImg = carouselImages[imgIndex].classList.add('show');
+
+//catturo il click sulle frecce
+
+arrowRightDomElement.addEventListener('click', function () {
+  selectedImg = carouselImages[imgIndex].classList.remove('show');
+  ++imgIndex;
+  selectedImg = carouselImages[imgIndex].classList.add('show');
+})
+
+arrowLeftDomElement.addEventListener('click', function () {
+  selectedImg = carouselImages[imgIndex].classList.remove('show');
+  --imgIndex;
+  selectedImg = carouselImages[imgIndex].classList.add('show');
+})
 
 
