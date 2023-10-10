@@ -18,7 +18,7 @@ img {
 }
 
 /* CAROUSEL */
-.carousel {
+#carousel {
   margin-top: 30px;
   margin-left: 10px;
   margin-right: 10px;
@@ -26,18 +26,15 @@ img {
   height: 500px;
 }
 
-.carousel > * {
-  display: none;
-}
-
-.carousel .show {
+#carousel .show {
   display: block;
 }
 
-.carousel img {
+#carousel img {
   height: 100%;
   object-fit: cover;
   object-position: center;
+  display: none;
 }
 
 .arrow {
