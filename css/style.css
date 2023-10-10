@@ -4,3 +4,53 @@
   box-sizing: border-box;
 }
 
+/* RESET RULES */
+img {
+  display: block;
+  width: 100%;
+}
+
+
+/* CONTAINER */
+.container {
+  margin: 0 auto;
+  max-width: 980px;
+}
+
+/* CAROUSEL */
+.carousel {
+  padding-top: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+  height: 500px;
+}
+
+.carousel img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.arrow {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.7);
+  width: 50px;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.arrow.arrow-left {
+  left: 10px;
+}
+
+.arrow.arrow-right {
+  right: 10px;
+}
