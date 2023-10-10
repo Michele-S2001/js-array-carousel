@@ -30,6 +30,7 @@ for (let i = 0; i < images.length; i++) {
 
 //creo un indice per selezionare le immagini 
 let imgIndex = 0;
+let imgMaxIndex = images.length - 1;
 
 const carouselImages = carouselDomElement.querySelectorAll('.image');
 
@@ -39,14 +40,22 @@ let selectedImg = carouselImages[imgIndex].classList.add('show');
 
 arrowRightDomElement.addEventListener('click', function () {
   selectedImg = carouselImages[imgIndex].classList.remove('show');
-  ++imgIndex;
+  if (imgIndex === imgMaxIndex) {
+    imgIndex = 0;
+  } else {
+    ++imgIndex;
+  }
   selectedImg = carouselImages[imgIndex].classList.add('show');
+  console.log(imgIndex);
 })
 
 arrowLeftDomElement.addEventListener('click', function () {
   selectedImg = carouselImages[imgIndex].classList.remove('show');
-  --imgIndex;
+  if (imgIndex === 0) {
+    imgIndex = imgMaxIndex;
+  } else {
+    --imgIndex;
+  }
   selectedImg = carouselImages[imgIndex].classList.add('show');
+  console.log(imgIndex)
 })
-
-
