@@ -18,10 +18,11 @@ img {
 }
 
 /* CAROUSEL */
+.carousel-showcase {
+  padding: 30px 10px 0 10px;
+}
+
 #carousel {
-  margin-top: 30px;
-  margin-left: 10px;
-  margin-right: 10px;
   position: relative;
   height: 500px;
 }

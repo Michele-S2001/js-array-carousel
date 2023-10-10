@@ -46,7 +46,6 @@ arrowRightDomElement.addEventListener('click', function () {
     ++imgIndex;
   }
   selectedImg = carouselImages[imgIndex].classList.add('show');
-  console.log(imgIndex);
 })
 
 arrowLeftDomElement.addEventListener('click', function () {
@@ -57,5 +56,4 @@ arrowLeftDomElement.addEventListener('click', function () {
     --imgIndex;
   }
   selectedImg = carouselImages[imgIndex].classList.add('show');
-  console.log(imgIndex)
 })
