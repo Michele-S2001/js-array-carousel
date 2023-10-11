@@ -16,27 +16,21 @@ const arrowRightDomElement = document.querySelector('.arrow-right');
 const thumbnailsDomElement = document.querySelector('.thumbnails');
 
 let imgDomElement;
+let thumbnailDomElement;
 
 // creiamo tutti gli elementi html con un loop
 for (let i = 0; i < images.length; i++) {
   let currentImage = images[i];
-  //creiamo l'elemento img
+  //creiamo gli elementi immagin per carosello e thumbnails
   imgDomElement = document.createElement("img");
   imgDomElement.classList.add('image');
-  //aggiungo url
-  imgDomElement.src = `${currentImage}`;
-  //aggiungo l'elemento img all'interno del carousel
-  carouselDomElement.append(imgDomElement);
-}
-
-for (let i = 0; i < images.length; i++) {
-  let currentImage = images[i];
-  //creiamo l'elemento img
   thumbnailDomElement = document.createElement("img");
   thumbnailDomElement.classList.add('thumbnail');
-  //aggiungo url
+  //aggiungiamo l'url
+  imgDomElement.src = `${currentImage}`;
   thumbnailDomElement.src = `${currentImage}`;
   //aggiungo l'elemento img all'interno del carousel
+  carouselDomElement.append(imgDomElement);
   thumbnailsDomElement.append(thumbnailDomElement);
 }
 
