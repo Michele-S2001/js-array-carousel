@@ -15,16 +15,13 @@ const arrowLeftDomElement = document.querySelector('.arrow-left');
 const arrowRightDomElement = document.querySelector('.arrow-right');
 const thumbnailsDomElement = document.querySelector('.thumbnails');
 
-let imgDomElement;
-let thumbnailDomElement;
-
 // creiamo tutti gli elementi html con un loop
 for (let i = 0; i < images.length; i++) {
   let currentImage = images[i];
   //creiamo gli elementi immagin per carosello e thumbnails
-  imgDomElement = document.createElement("img");
+  const imgDomElement = document.createElement("img");
   imgDomElement.classList.add('image');
-  thumbnailDomElement = document.createElement("img");
+  const thumbnailDomElement = document.createElement("img");
   thumbnailDomElement.classList.add('thumbnail');
   //aggiungiamo l'url
   imgDomElement.src = `${currentImage}`;
