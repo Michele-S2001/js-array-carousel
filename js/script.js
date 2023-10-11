@@ -13,6 +13,7 @@ const images = [
 const carouselDomElement = document.getElementById('carousel');
 const arrowLeftDomElement = document.querySelector('.arrow-left');
 const arrowRightDomElement = document.querySelector('.arrow-right');
+const thumbnailsDomElement = document.querySelector('.thumbnails');
 
 let imgDomElement;
 
@@ -28,31 +29,48 @@ for (let i = 0; i < images.length; i++) {
   carouselDomElement.append(imgDomElement);
 }
 
+for (let i = 0; i < images.length; i++) {
+  let currentImage = images[i];
+  //creiamo l'elemento img
+  thumbnailDomElement = document.createElement("img");
+  thumbnailDomElement.classList.add('thumbnail');
+  //aggiungo url
+  thumbnailDomElement.src = `${currentImage}`;
+  //aggiungo l'elemento img all'interno del carousel
+  thumbnailsDomElement.append(thumbnailDomElement);
+}
+
 //creo un indice per selezionare le immagini 
 let imgIndex = 0;
 let imgMaxIndex = images.length - 1;
 
 const carouselImages = carouselDomElement.querySelectorAll('.image');
+const thumbnailsImages = thumbnailsDomElement.querySelectorAll('.thumbnail');
 
 carouselImages[imgIndex].classList.add('show');
+thumbnailsImages[imgIndex].classList.add('active');
 
 //catturo il click sulle frecce
 arrowRightDomElement.addEventListener('click', function () {
   carouselImages[imgIndex].classList.remove('show');
+  thumbnailsImages[imgIndex].classList.remove('active');
   if (imgIndex === imgMaxIndex) {
     imgIndex = 0;
   } else {
     ++imgIndex;
   }
   carouselImages[imgIndex].classList.add('show');
+  thumbnailsImages[imgIndex].classList.add('active');
 })
 
 arrowLeftDomElement.addEventListener('click', function () {
   carouselImages[imgIndex].classList.remove('show');
+  thumbnailsImages[imgIndex].classList.remove('active');
   if (imgIndex === 0) {
     imgIndex = imgMaxIndex;
   } else {
     --imgIndex;
   }
   carouselImages[imgIndex].classList.add('show');
+  thumbnailsImages[imgIndex].classList.add('active');
 })
