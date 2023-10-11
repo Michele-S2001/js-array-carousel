@@ -34,26 +34,25 @@ let imgMaxIndex = images.length - 1;
 
 const carouselImages = carouselDomElement.querySelectorAll('.image');
 
-let selectedImg = carouselImages[imgIndex].classList.add('show');
+carouselImages[imgIndex].classList.add('show');
 
 //catturo il click sulle frecce
-
 arrowRightDomElement.addEventListener('click', function () {
-  selectedImg = carouselImages[imgIndex].classList.remove('show');
+  carouselImages[imgIndex].classList.remove('show');
   if (imgIndex === imgMaxIndex) {
     imgIndex = 0;
   } else {
     ++imgIndex;
   }
-  selectedImg = carouselImages[imgIndex].classList.add('show');
+  carouselImages[imgIndex].classList.add('show');
 })
 
 arrowLeftDomElement.addEventListener('click', function () {
-  selectedImg = carouselImages[imgIndex].classList.remove('show');
+  carouselImages[imgIndex].classList.remove('show');
   if (imgIndex === 0) {
     imgIndex = imgMaxIndex;
   } else {
     --imgIndex;
   }
-  selectedImg = carouselImages[imgIndex].classList.add('show');
+  carouselImages[imgIndex].classList.add('show');
 })
